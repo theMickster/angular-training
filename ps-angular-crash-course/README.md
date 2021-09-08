@@ -1,21 +1,6 @@
 # Plualsight's Angular Crash Course
 
-Enter new weight on page, default to current date
-Highlight if they put in a past date
-XX Don’t allow future dates
-Settings page
-Overview on home page - trend or something? Last 3 entries?
+From the course webpage
+> Angular is one of the most popular front end frameworks out there. Learning to use it is great for your career, but you may not need an in-depth approach. In this course, Angular Crash Course, in less than 60 minutes, you will learn all of the foundational pieces of Angular. First, you will learn the basic building blocks: components, modules, and services. Then, you will see how to handle forms, routing, and templates. Finally, you will learn how to build your application to put it into production. When you are finished with this course, you will feel confident in your ability to develop applications in Angular.
 
-Add some kind of goal setting?
-A setting to turn on body fat or BMI tracking. It’s all hidden if not
-Settings for pounds or kilos
-Setting to create a workout??
-Workout tracking
-Calorie tracking
-Body fat % tracking
-BMI tracking
-Need some kind of content projection - popup? Maybe a common Tip component
-Http - https://github.com/typicode/json-server
-
-Finish demo
-Break down demo into outline
+Visit Joe's [Angular Crash Course](https://app.pluralsight.com/library/courses/angular-crash-course/table-of-contents) for more information on this project. 
