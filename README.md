@@ -14,10 +14,10 @@ You will need the following tools:
 
 ## Apps / Courses
 `ps-angular-crash-course`
-Materials from Joe Eames course [Angular Crash Course](https://app.pluralsight.com/library/courses/angular-crash-course/table-of-contents)
+Materials from Joe Eames's course [Angular Crash Course](https://app.pluralsight.com/library/courses/angular-crash-course/table-of-contents)
 
 `ps-angular-forms`
-Materials from Mark Zamoyta course [Angular Forms](https://app.pluralsight.com/library/courses/angular-forms/table-of-contents)
+Materials from Mark Zamoyta's course [Angular Forms](https://app.pluralsight.com/library/courses/angular-forms/table-of-contents)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
