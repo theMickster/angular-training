@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faClipboardList, fas  } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,6 +16,8 @@ import { UserSettingsFormComponent } from './user-settings-form/user-settings-fo
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     FontAwesomeModule
   ],
   providers: [],

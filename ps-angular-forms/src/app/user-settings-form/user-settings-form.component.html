@@ -1,45 +1,45 @@
-<form #form="ngForm">
+<form [formGroup]="userSettingsForm" (ngSubmit)="onSubmit()" novalidate>
   <div class="form-group">
     <div class="row">
       <div class="col-md-6 mb-3">
         <label for="emailInput">Email Address</label>
-        <input id="emailInput" type="email" class="form-control" placeholder="Email Address" name="emailAddress" [(ngModel)] = "userSettings.emailAddress">
+        <input id="emailInput" type="email" class="form-control" placeholder="Email Address" name="emailAddress" formControlName = "emailAddress">
       </div>
       <div class="col-md-6 mb-3">
         <label for="userNameInput">Username</label>
-        <input id="userNameInput" type="text" class="form-control" placeholder="Username"  name="username" [(ngModel)] = "userSettings.username">
+        <input id="userNameInput" type="text" class="form-control" placeholder="Username"  name="username" formControlName = "username">
       </div>
     </div>
 
     <div class="row mt-2">
       <div class="col-md-6 mb-3">
         <label for="firstNameInput">First Name</label>
-        <input id="firstNameInput" type="text" class="form-control" placeholder="First name"  name="firstName" [(ngModel)] = "userSettings.firstName">
+        <input id="firstNameInput" type="text" class="form-control" placeholder="First name"  name="firstName" formControlName = "firstName">
       </div>
       <div class="col-md-6 mb-3">
         <label for="lastNameInput">Last Name</label>
-        <input id="lastNameInput" type="text" class="form-control" placeholder="Last name" name="lastName" [(ngModel)] = "userSettings.lastName">
+        <input id="lastNameInput" type="text" class="form-control" placeholder="Last name" name="lastName" formControlName = "lastName">
       </div>
     </div>
 
     <div class="row mt-2">
       <div class="col-md-6 mb-3">
         <label for="validationCustom03">City</label>
-        <input type="text" class="form-control" id="validationCustom03" placeholder="City" required name="city" [(ngModel)] = "userSettings.city" >
+        <input type="text" class="form-control" id="validationCustom03" placeholder="City" required name="city" formControlName = "city" >
         <div class="invalid-feedback">
           Please provide a valid city.
         </div>
       </div>
       <div class="col-md-3 mb-3">
         <label for="validationCustom04">State</label>
-        <input type="text" class="form-control" id="validationCustom04" placeholder="State" required name="state" [(ngModel)] = "userSettings.state">
+        <input type="text" class="form-control" id="validationCustom04" placeholder="State" required name="state" formControlName = "state">
         <div class="invalid-feedback">
           Please provide a valid state.
         </div>
       </div>
       <div class="col-md-3 mb-3">
         <label for="validationCustom05">Zip</label>
-        <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required name="zip" [(ngModel)] = "userSettings.zip">
+        <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required name="zip" formControlName = "zip">
         <div class="invalid-feedback">
           Please provide a valid zip.
         </div>
@@ -49,7 +49,7 @@
     <div class="row mt-3">
       <div class="col ms-2">
         <h6>Co-Op Membership Type</h6>
-        <select class="form-select" aria-label="co-op membership type" name="membershipType" [(ngModel)] = "userSettings.membershipType">
+        <select class="form-select" aria-label="co-op membership type" name="membershipType" formControlName = "membershipType">
           <option value=""></option>
           <option value="Monthly">Monthly</option>
           <option value="Annual">Annual</option>
@@ -64,17 +64,17 @@
 
         <h6>Email Contact Options</h6>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="weeklyNewsletterChk" name="weeklyNewsletter" [(ngModel)] = "userSettings.weeklyNewsletter">
+          <input class="form-check-input" type="checkbox" value="" id="weeklyNewsletterChk" name="weeklyNewsletter" formControlName = "weeklyNewsletter">
           <label class="form-check-label" for="weeklyNewsletterChk">Weekly Newsletter</label>
         </div>
 
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="dailySpecialsChk" name="dailySpecials"  [(ngModel)] = "userSettings.dailySpecials" >
+          <input class="form-check-input" type="checkbox" value="" id="dailySpecialsChk" name="dailySpecials"  formControlName = "dailySpecials" >
           <label class="form-check-label" for="dailySpecialsChk">Daily Specials</label>
         </div>
 
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="clearanceSalesChk" name="clearanceSales"  [(ngModel)] = "userSettings.clearanceSales" >
+          <input class="form-check-input" type="checkbox" value="" id="clearanceSalesChk" name="clearanceSales"  formControlName = "clearanceSales" >
           <label class="form-check-label" for="clearanceSalesChk">Clearance Sales</label>
         </div>
 
@@ -86,17 +86,17 @@
 
         <h6>User Interface Style</h6>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="userInterfaceStyle" id="lightUsercRadio" value="light" [(ngModel)] = "userSettings.userInterfaceStyle">
+          <input class="form-check-input" type="radio" name="userInterfaceStyle" id="lightUsercRadio" value="light" formControlName = "userInterfaceStyle">
           <label class="form-check-label" for="lightUserInterfaceStyleRadio">Light</label>
         </div>
 
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="userInterfaceStyle" id="mediumUserInterfaceStyleRadio" value="medium" [(ngModel)] = "userSettings.userInterfaceStyle">
+          <input class="form-check-input" type="radio" name="userInterfaceStyle" id="mediumUserInterfaceStyleRadio" value="medium" formControlName = "userInterfaceStyle">
           <label class="form-check-label" for="mediumUserInterfaceStyleRadio">Medium</label>
         </div>
 
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="userInterfaceStyle" id="darkUserInterfaceStyleRadio" value="dark" [(ngModel)] = "userSettings.userInterfaceStyle">
+          <input class="form-check-input" type="radio" name="userInterfaceStyle" id="darkUserInterfaceStyleRadio" value="dark" formControlName = "userInterfaceStyle">
           <label class="form-check-label" for="darkUserInterfaceStyleRadio">Dark</label>
         </div>
 
@@ -106,18 +106,20 @@
     <div class="row mt-3">
       <div class="col">
         <label for="notesTextArea" class="form-label">Notes</label>
-        <textarea class="form-control" id="notesTextArea" rows="3" name="notes" [(ngModel)] = "userSettings.notes"></textarea>
+        <textarea class="form-control" id="notesTextArea" rows="3" name="notes" formControlName = "notes"></textarea>
       </div>
     </div>
     <div class="mt-3">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary ms-2">Submit</button>
+      <button type="reset" class="btn btn-secondary ms-2" (click)="onRevert()">Revert</button>
+      <button type="reset" class="btn btn-info ms-2" (click)="onGetSettingsData()">Get Settings Data</button>
     </div>
   </div>
 
-  
+
 </form>
 
-
-<!-- <div>
-  {{ userSettings | json }}
+<!--
+<div>
+  {{ userSettingsForm.value| json }}
 </div> -->
