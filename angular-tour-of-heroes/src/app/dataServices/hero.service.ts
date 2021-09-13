@@ -21,6 +21,10 @@ export class HeroService {
         catchError(this.handleError));
   }
 
+  public getHero(id: number): Observable<Hero | undefined> {
+    return this.getHeroes()
+      .pipe(map((heroes: Hero[]) => heroes.find(x => x.heroId == id)));
+  }
 
   private handleError(err: HttpErrorResponse): Observable<never> {
     // in a real world app, we may send the server to some remote logging infrastructure

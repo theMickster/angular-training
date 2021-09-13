@@ -1,53 +1,27 @@
-
 <div class="container mt-2">
 
-  <!--<div class="card">
-    <div class="card-header">
-      Details
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">{{ hero.name | uppercase }} </h5>
-      <p class="card-text">
-        <span>id: {{hero.id}} </span><br />
-        <span>name: {{hero.name}} </span>
-      </p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      Editor
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">{{ hero.name | uppercase }} </h5>
-      <p class="card-text">
-        <label for="name">Hero name: </label> <br />
-        <input id="name" [(ngModel)]="hero.name" placeholder="name">
-      </p>
-    </div>
-  </div>-->
-
   <div class="row">
-    <div *ngFor="let hero of heroes" class="col-6 card">
-      <div class="card-header">
-          <a [routerLink]="['/heroes', hero.heroId]">
-            <img class="card-img-top"
-                 [alt]="hero.name"
-                 [src]='hero.imageUrl'
-                 [title]='hero.name'
-                 [style.width.px]='imageWidth'
-                 [style.margin.px]='imageMargin' />
-          </a>
+    <div *ngFor="let hero of heroes" class="card mr-4 mb-4" style="width: 18rem;">
+      
+      <a [routerLink]="['/heroes', hero.heroId]">
+        <img class="card-img-top"
+              [alt]="hero.name"
+              [src]='hero.imageUrl'
+              [title]='hero.name'
+              [style.margin.px]='imageMargin' />
+      </a>
+      
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p>
+            {{hero.catchphrase}}
+          </p>
+
+          <footer class="blockquote-footer">{{hero.name}}</footer>
+        </blockquote>
       </div>
 
-      <div class="card-body">
-        <h5 class="card-title">{{ hero.name | uppercase }} </h5>
-        <p class="card-text">
-          <span>Id: {{hero.heroId}} </span> <br />
-          <span>Name: {{hero.name}} </span> <br />
-          <span>Catchphrase: {{hero.catchphrase}} </span><br />
-        </p>
-      </div>
+
     </div>
 
   </div>

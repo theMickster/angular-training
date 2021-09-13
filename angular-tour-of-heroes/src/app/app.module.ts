@@ -5,16 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
+import { HeroModule } from './hero.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    HeroesComponent
+    HomeComponent    
   ],
   imports: [
     AppRoutingModule,
@@ -22,9 +21,9 @@ import { AppRoutingModule } from './app-routing.module';
     CommonModule,
     FormsModule,
     HttpClientModule,
+    HeroModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
-      { path: 'heroes', component: HeroesComponent },
       { path: '', redirectTo: 'app', pathMatch: 'full' },
       { path: '**', redirectTo: 'app', pathMatch: 'full' }
     ]),
