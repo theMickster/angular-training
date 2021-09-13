@@ -13,6 +13,10 @@ You will need the following tools:
 * [Angular CLI](https://angular.io/cli)
 
 ## Apps / Courses
+`angular-tour-of-heroes`
+Materials from the Angular.io example app called [Tour of Heroes](https://angular.io/tutorial)
+I took my own personal spin on the app so it won't look much like the example from Agular, but it still shows the techniques taught in the tutorial.
+
 `ps-angular-getting-started-deborahk`
 Materials from Deborah Kurata's course [Angular: Getting Started](https://app.pluralsight.com/library/courses/angular-2-getting-started-update/table-of-contents)
 
@@ -21,6 +25,10 @@ Materials from Joe Eames's course [Angular Crash Course](https://app.pluralsight
 
 `ps-angular-forms`
 Materials from Mark Zamoyta's course [Angular Forms](https://app.pluralsight.com/library/courses/angular-forms/table-of-contents)
+
+`typescript-getting-started`
+Materials from Brice Wilson's course [TypeScript: Getting Started](https://app.pluralsight.com/library/courses/getting-started-typescript/table-of-contents)
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
