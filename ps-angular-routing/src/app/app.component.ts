@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthService } from './user/auth.service';
 
@@ -8,7 +9,7 @@ import { AuthService } from './user/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  pageTitle = 'Contoso Product Management';
+  pageTitle = 'Contoso';
 
   get isLoggedIn(): boolean {
     return this.authService.isLoggedIn;
@@ -21,10 +22,14 @@ export class AppComponent {
     return '';
   }
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router) { }
 
   logOut(): void {
+    console.log(`The user ${this.authService.currentUser.userName} is being logged out`);
     this.authService.logout();
-    console.log('Log out');
+    this.router.navigate(['/welcome']);
+
   }
 }

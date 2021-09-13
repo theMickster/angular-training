@@ -10,7 +10,7 @@
           autocomplete="off">
       <fieldset>
 
-        <div class="form-group row">
+        <div class="form-group row mb-4">
           <label class="col-md-2 col-form-label"
                  for="userNameId">User Name</label>
           <div class="col-md-8">
@@ -31,7 +31,7 @@
           </div>
         </div>
 
-        <div class="form-group row">
+        <div class="form-group row mb-4">
           <label class="col-md-2 col-form--label"
                  for="passwordId">Password</label>
 
@@ -54,8 +54,8 @@
         </div>
 
         <div class="row">
-          <div class="col-md-4 offset-md-2">
-            <button class="btn btn-primary mr-3"
+          <div class="col-md-4 offset-md-2 mb-4">
+            <button class="btn btn-primary me-3"
                     type="submit"
                     style="width:80px"
                     [disabled]="!loginForm.valid">
@@ -63,7 +63,8 @@
             </button>
             <button class="btn btn-outline-secondary"
                     type="button"
-                    style="width:80px">
+                    style="width:80px"
+                    [routerLink] = "['/welcome']">
               Cancel
             </button>
           </div>
