@@ -1,0 +1,40 @@
+{
+  "heroes": [
+    {
+      "heroId": 1,
+      "name": "Robin",
+      "catchphrase": "Holy cannoli Batman!",
+      "imageUrl": "assets/images/robin.jpg"
+    },
+    {
+      "heroId": 2,
+      "name": "Batman",
+      "catchphrase": "Holy cannoli Batman!",
+      "imageUrl": "assets/images/batman.png"
+    },
+    {
+      "heroId": 3,
+      "name": "Superman",
+      "catchphrase": "Up, up and away!",
+      "imageUrl": "assets/images/superman.png"
+    },
+    {
+      "heroId": 4,
+      "name": "Green Lantern",
+      "catchphrase": "In brightest day, in blackest night, no evil shall escape my sight. Let those who worship evil’s might, beware my power – Green Lantern’s light",
+      "imageUrl": "assets/images/greenlantern.jpg"
+    },
+    {
+      "heroId": 5,
+      "name": "Hulk",
+      "catchphrase": "Hulk Smash!",
+      "imageUrl": "assets/images/hulk.png"
+    },
+    {
+      "heroId": 6,
+      "name": "Spiderman",
+      "catchphrase": "With great power comes great responsibility",
+      "imageUrl": "assets/images/spiderman.jpg"
+    }
+  ]
+}
