@@ -5,8 +5,15 @@
 
   <div class="card-body">
     <div class="row">
-      <div class="col-md-2">Filter by:</div>
-      <div class="col-md-4">
+      <div class="col-lg-2 col-md-3">
+        <button class="btn btn-outline-success btn-sm"
+                      [routerLink]="['/products', 0, 'edit']">
+                Create New
+        </button>
+
+      </div>
+      <div class="col-lg-2 col-md-3">Product Filter:</div>
+      <div class="col-lg-6 col-md-4">
         <input type="text"
                [(ngModel)]="listFilter" />
       </div>
@@ -47,7 +54,8 @@
                    [style.margin.px]="imageMargin">
             </td>
             <td>
-              <a>
+              <a [routerLink]="['/products', product.id]"
+                 [queryParams]="{filterBy: listFilter, showImage: showImage}">
                 {{ product.productName }}
               </a>
             </td>
@@ -59,7 +67,8 @@
               </pm-star>
             </td>
             <td>
-              <button class="btn btn-outline-primary btn-sm">
+              <button class="btn btn-outline-primary btn-sm"
+                      [routerLink]="['/products', product.id, 'edit']">
                 Edit
               </button>
             </td>

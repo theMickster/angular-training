@@ -17,7 +17,7 @@
                  name="category"
                  #categoryVar="ngModel"
                  [ngClass]="{'is-invalid': (categoryVar.touched ||
-                                            categoryVar.dirty || 
+                                            categoryVar.dirty ||
                                             product.id !== 0) &&
                                             !categoryVar.valid }" />
           <span class="invalid-feedback">
@@ -71,5 +71,6 @@
 </div>
 
 <div class="alert alert-danger"
-     *ngIf="errorMessage">{{errorMessage}}
+     *ngIf="errorMessage">
+  {{errorMessage}}
 </div>
