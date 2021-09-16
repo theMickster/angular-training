@@ -5,9 +5,8 @@ import { MessageService } from './message.service';
 
 @Component({
   templateUrl: './message.component.html',
-  styles: [
-    '.message-row { margin-bottom: 10px }'
-  ]
+  styleUrls: ['./message.component.css']
+
 })
 export class MessageComponent {
   get messages(): string[] {
@@ -18,6 +17,7 @@ export class MessageComponent {
               private router: Router) { }
 
   close(): void {
-    // Close the popup.
+    this.router.navigate( [ {outlets: {'messages-outlet': null }} ] );
+    this.messageService.isDisplayed = false;
   }
 }
