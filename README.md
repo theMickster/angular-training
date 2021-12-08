@@ -18,17 +18,23 @@ Materials from the Angular.io example app called [Tour of Heroes](https://angula
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 I took my own personal spin on the app so it won't look much like the example from Agular, but it still shows the techniques taught in the tutorial.
 
-`ps-angular-getting-started-deborahk`
-Materials from Deborah Kurata's course [Angular: Getting Started](https://app.pluralsight.com/library/courses/angular-2-getting-started-update/table-of-contents).
+`playground`
+Sanbox environment for all fun things Angular & modern SPA development. 
 
 `ps-angular-crash-course`
 Materials from Joe Eames's course [Angular Crash Course](https://app.pluralsight.com/library/courses/angular-crash-course/table-of-contents).
+
+`ps-angular-getting-started-deborahk`
+Materials from Deborah Kurata's course [Angular: Getting Started](https://app.pluralsight.com/library/courses/angular-2-getting-started-update/table-of-contents).
 
 `ps-angular-forms`
 Materials from Mark Zamoyta's course [Angular Forms](https://app.pluralsight.com/library/courses/angular-forms/table-of-contents).
 
 `ps-angular-routing`
 Materials from Deborah Kurata's course [Angular Routing](https://app.pluralsight.com/library/courses/angular-routing/table-of-contents)
+
+`ps-angular-toh-unit-testing`
+Materials from Joe Eames's course [Unit Testing in Angular](https://app.pluralsight.com/library/courses/unit-testing-angular/)
 
 `typescript-getting-started`
 Materials from Brice Wilson's course [TypeScript: Getting Started](https://app.pluralsight.com/library/courses/getting-started-typescript/table-of-contents).
