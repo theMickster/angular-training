@@ -1,6 +1,15 @@
 {
-  "name": "angular",
-  "version": "0.0.0",
+  "name": "angular-playground",
+  "version": "1.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve -o --port 4234",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+	"server": "json-server --routes src/api/routes.json --watch src/api/database.json",
+    "e2e": "ng e2e"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^13.0.3",
@@ -26,15 +35,7 @@
     "tslib": "2.3.1",
     "update": "^0.7.4",
     "zone.js": "0.11.4"
-  },
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+  },  
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.0.3",
     "@angular/cli": "~13.0.3",
