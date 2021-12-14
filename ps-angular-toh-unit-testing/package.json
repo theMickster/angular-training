@@ -8,6 +8,7 @@
     "start": "ng serve -o --port 4248",
     "build": "ng build",
     "test": "ng test",
+    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "server": "json-server --routes src/api/routes.json --watch src/api/database.json",
     "e2e": "ng e2e"
