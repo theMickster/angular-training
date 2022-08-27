@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { DEFAULT_PAGE, Hero, HeroService } from '../../services/hero.service';
+import { HeroService } from '../../services/hero.service';
 
 @Component({
     selector: 'rx-hero-table',
