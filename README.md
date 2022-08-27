@@ -36,8 +36,16 @@ Materials from Deborah Kurata's course [Angular Routing](https://app.pluralsight
 `ps-angular-toh-unit-testing`
 Materials from Joe Eames's course [Unit Testing in Angular](https://app.pluralsight.com/library/courses/unit-testing-angular/)
 
+`reactive-angular-workshop`
+Materials from the 2021 ng-conf's 1-day Workshop on Reactive Angular hosted on Pluralsight [ng-conf-2021](https://app.pluralsight.com/paths/conference/ng-conf2021/)
+
 `typescript-getting-started`
 Materials from Brice Wilson's course [TypeScript: Getting Started](https://app.pluralsight.com/library/courses/getting-started-typescript/table-of-contents).
+
+`udemy-reactive-angular-course`
+Materials from the Udemy course from Angular University on Reactive Angular 
+[Reactive Angular Course with Rxjs + Angular 14](https://cognizant.udemy.com/course/rxjs-reactive-angular-course/)
+[GitHub Repository](https://github.com/angular-university/reactive-angular-course)
 
 
 ## Contributing
