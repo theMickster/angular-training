@@ -2,6 +2,8 @@
 
 <loading></loading>
 
+<messages></messages>
+
 <mat-dialog-content [formGroup]="form">
 
   <mat-form-field>
@@ -33,8 +35,10 @@
 
   <mat-form-field>
 
-    <input matInput [matDatepicker]="myDatepicker" #searchInput
-           formControlName="releasedAt">
+    
+    <input id="courseDate" matInput [matDatepicker]="myDatepicker" #searchInput
+           formControlName="releasedAt"
+           placeholder="Course Start Date">
 
     <mat-datepicker-toggle matSuffix
                            [for]="myDatepicker">
