@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
 import { Course } from "../model/course";
 import { Observable } from "rxjs";
 import { CoursesStore } from "../services/stores/courses.store";
@@ -7,6 +7,7 @@ import { CoursesStore } from "../services/stores/courses.store";
   selector: "home",
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
   beginnerCourses$: Observable<Course[]>;
@@ -23,4 +24,4 @@ export class HomeComponent implements OnInit {
 
     this.advancedCourses$ = this.coursesStore.filterByCategory("ADVANCED");
   }
-}
+} 
