@@ -1,5 +1,5 @@
 
-## The Reactive Angular Course
+# The Reactive Angular Course
 
 This repository contains the code of the [Reactive Angular Course](https://angular-university.io/course/reactive-angular-course).
 
@@ -7,18 +7,17 @@ This course repository is updated to Angular v14.
 
 ![Reactive Angular Course](https://angular-university.s3-us-west-1.amazonaws.com/course-images/reactive-angular-course.jpg)
 
-
-# Installation pre-requisites
+## Installation pre-requisites
 
 Please use Node 16 long-term support (LTS) version.
 
-# Installing the Angular CLI
+## Installing the Angular CLI
 
 With the following command the angular-cli will be installed globally in your machine:
 
     npm install -g @angular/cli 
 
-# How To install this repository
+## How To install this repository
 
 We can install the master branch using the following commands:
 
@@ -37,7 +36,7 @@ NPM 5 or above has the big advantage that if you use it you will be installing t
 
 This should take a couple of minutes. If there are issues, please post the complete error message in the Questions section of the course.
 
-# To Run the Development Backend Server
+## To Run the Development Backend Server
 
 In order to be able to provide realistic examples, we will need in our playground a small REST API backend server. We can start the sample application backend with the following command:
 
@@ -45,7 +44,7 @@ In order to be able to provide realistic examples, we will need in our playgroun
 
 This is a small Node REST API server.
 
-# To run the Development UI Server
+## To run the Development UI Server
 
 To run the frontend part of our code, we will use the Angular CLI:
 
