@@ -23,9 +23,9 @@ With the following command the angular-cli will be installed globally in your ma
 We can install the master branch using the following commands:
 
     git clone https://github.com/angular-university/reactive-angular-course.git
-    
+
 This repository is made of several separate npm modules, that are installable separately. For example, to run the au-input module, we can do the following:
-    
+
     cd reactive-angular-course
     npm install
 
@@ -52,21 +52,3 @@ To run the frontend part of our code, we will use the Angular CLI:
     npm start 
 
 The application is visible at port 4200: [http://localhost:4200](http://localhost:4200)
-
-
-
-# Important 
-
-This repository has multiple branches, have a look at the beginning of each section to see the name of the branch.
-
-At certain points along the course, you will be asked to checkout other remote branches other than master. You can view all branches that you have available remotely using the following command:
-
-    git branch -a
-
-  The remote branches have their starting in origin, such as for example 1-navigation-and-containers.
-
-We can checkout the remote branch and start tracking it with a local branch that has the same name, by using the following command:
-
-      git checkout -b section-1 origin/1-navigation-and-containers
-
-It's also possible to download a ZIP file for a given branch,  using the branch dropdown on this page on the top left, and then selecting the Clone or Download / Download as ZIP button.
