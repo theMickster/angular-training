@@ -26,6 +26,14 @@ app.route('/api/courses/:id').put(saveCourse);
 
 app.route('/api/login').post(loginUser);
 
+app.route('/api/').get( (req, res) => {
+    res.send('<body><h1>Hello from the REST API Express server for the Udemy Reactive Angular Training Course</h1></body>');
+})  
+
+app.route('/').get( (req, res) => {
+    res.send('Hello from the REST API Express server for the Udemy Reactive Angular Training Course');
+})  
+
 const httpServer = app.listen(9000, () => {
     console.log("HTTP REST API Server running at http://localhost:" + httpServer.address()["port"]);
 });
