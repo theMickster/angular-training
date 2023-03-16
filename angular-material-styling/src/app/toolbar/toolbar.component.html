@@ -1,0 +1,38 @@
+<div class="example-container">
+  <mat-toolbar color="primary">
+
+    <button mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+
+    <span class="example-spacer"></span>
+
+    <span>Angular Material Styling</span>
+
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button class="example-icon home-icon" aria-label="Home">
+      <mat-icon>home</mat-icon>
+    </button>
+
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Love It">
+      <mat-icon>favorite</mat-icon>
+    </button>
+
+    <button mat-icon-button class="example-icon" aria-label="Share It">
+      <mat-icon>share</mat-icon>
+    </button>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" mode="side">
+      <mat-nav-list>
+        <a mat-list-item routerLink="home">Home</a>
+        <a mat-list-item routerLink="about">About</a>
+        <a mat-list-item routerLink="lookups">Lookups</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
