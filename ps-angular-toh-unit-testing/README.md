@@ -1,7 +1,5 @@
 # Pluralsight's Unit Testing in Angular Course
-This course is up to date.
 
-To get started, clone the repo or download it
+Created by Joe Eames for Pluralsight.
 
-npm install
-npm test
+
