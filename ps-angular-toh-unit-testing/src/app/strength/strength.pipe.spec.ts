@@ -1,6 +1,6 @@
 import {StrengthPipe} from './strength.pipe';
 
-describe('StrengthPipe', () => {
+describe('Strength Pipe Unit Tests', () => {
 
     it('should display weak if strength is 5', () => {
         let sut = new StrengthPipe();
