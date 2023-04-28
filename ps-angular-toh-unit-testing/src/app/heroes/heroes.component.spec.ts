@@ -1,12 +1,12 @@
 import { Component, Input } from "@angular/core";
-import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { of } from "rxjs";
 import { Hero } from "../hero";
 import { HeroService } from "../hero.service";
 import { HeroesComponent } from "./heroes.component";
+import { By } from "@angular/platform-browser";
 
-describe('HeroesComponent', () => {
+describe('Heroes Component Unit Tests', () => {
   let sut: HeroesComponent;
   let heroesList: Hero[];
   let mockHeroService;
@@ -57,7 +57,7 @@ describe('HeroesComponent', () => {
 
 });
 
-describe('Heroes Component Integration Tests', () => {
+describe('Heroes Component Shallow Integration Tests', () => {
   let sut: ComponentFixture<HeroesComponent>;
   let heroesList: Hero[];
   let mockHeroService;
@@ -100,5 +100,12 @@ describe('Heroes Component Integration Tests', () => {
 
     expect(sut.componentInstance.heroes.length).toBe(7);
   })
+
+  it('should create one list element for each hero', () => {
+    mockHeroService.getHeroes.and.returnValue(of(heroesList));
+    sut.detectChanges();
+
+    expect(sut.debugElement.queryAll(By.css('li')).length).toBe(7);
+  });
 
 });
