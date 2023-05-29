@@ -1,16 +1,19 @@
 {
   "name": "angular-tour-of-heroes",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Mick Letofsky",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --port 4225 --proxy-config proxy.conf.json",
     "build": "ng build --prod",
     "test": "ng test",
+    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "server": "json-server --routes src/api/routes.json --watch src/api/heroes.json",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~12.2.0",
     "@angular/common": "~12.2.0",
