@@ -1,22 +1,21 @@
 # Mick's Angular Training
+
 This GitHub repository contains code samples that demonstrate my self-paced learning of Angular. 
 Most of the work is derrived from Angular coures in Pluralsight &amp; Udemy.
 
 ## Getting Started
-Please fork this repo to follow along with my work or to suggest changes. 
+
+Please fork this repo to follow along with my work or to suggest changes.
 
 ### Prerequisites
+
 You will need the following tools:
 
 * [Visual Studio Code or Visual Studio 2019](https://www.visualstudio.com/downloads/)
-* [Node.js ](https://nodejs.org/en/download/)
+* [Node.js](https://nodejs.org/en/download/)
 * [Angular CLI](https://angular.io/cli)
 
 ## Apps / Courses
-`angular-tour-of-heroes`
-Materials from the Angular.io example app called [Tour of Heroes](https://angular.io/tutorial).<br /> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-I took my own personal spin on the app so it won't look much like the example from Agular, but it still shows the techniques taught in the tutorial.
 
 `playground`
 Sanbox environment for all fun things Angular & modern SPA development. 
@@ -47,13 +46,14 @@ Materials from the Udemy course from Angular University on Reactive Angular
 [Reactive Angular Course with Rxjs + Angular 14](https://cognizant.udemy.com/course/rxjs-reactive-angular-course/)
 [GitHub Repository](https://github.com/angular-university/reactive-angular-course)
 
-
 ## Contributing
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Technologies
+
 * Angular
 
-
 ## License
+
 This project is licensed under the MIT License. 
