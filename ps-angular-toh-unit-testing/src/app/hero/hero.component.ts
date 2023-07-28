@@ -7,10 +7,10 @@ import { Hero } from '../hero';
   styleUrls:  ['./hero.component.scss']
 })
 export class HeroComponent {
-  @Input() hero: Hero;
+  @Input() hero: Hero | undefined;
   @Output() delete = new EventEmitter();
 
-  onDeleteClick($event): void {
+  onDeleteClick($event: any): void {
     $event.stopPropagation();
     this.delete.next();
   }

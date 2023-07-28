@@ -11,7 +11,7 @@ import { HeroService }  from '../hero.service';
   styleUrls: [ './hero-detail.component.scss' ]
 })
 export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero;
+  @Input() hero!: Hero;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,7 +24,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
   getHero(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = Number(this.route.snapshot.paramMap.get('id')) ?? -1;
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
   }
@@ -41,20 +41,20 @@ export class HeroDetailComponent implements OnInit {
   }
 }
 
-function debounce(func, wait, immedaite){
-  var timeout;
+function debounce(func: Function, wait: number, immediate: boolean){
+  let timeout: any;
 
-  return function() {
-    var context = this, args = arguments;
+  return function(this: void) {
+    let context = this, args = arguments;
 
-    var later = function () {
+    let later = function () {
       timeout = null;
-      if(!immedaite){
+      if(!immediate){
         func.apply(context, args);
       }
     };
 
-    var callNow = immedaite && !timeout;
+    let callNow = immediate && !timeout;
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
 

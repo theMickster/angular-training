@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
@@ -9,7 +8,7 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+  heroes: Hero[] = [];
 
   constructor(private heroService: HeroService) { }
 
@@ -24,7 +23,7 @@ export class HeroesComponent implements OnInit {
 
   add(name: string): void {
     name = name.trim();
-    var strength = 11
+    let strength = 11;
     if (!name) { return; }
     this.heroService.addHero({ name, strength } as Hero)
       .subscribe(hero => {
