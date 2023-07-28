@@ -11,7 +11,9 @@
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "server": "json-server --routes src/api/routes.json --watch src/api/database.json",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "keywords": [],
   "author": "",
@@ -40,6 +42,7 @@
     "@types/jasmine": "~4.3.2",
     "@types/jasminewd2": "~2.0.10",
     "@types/node": "~12.12.31",
+    "cypress": "^12.17.2",
     "jasmine-core": "~5.0.1",
     "karma": "~6.4.2",
     "karma-chrome-launcher": "~3.2.0",
