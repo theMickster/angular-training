@@ -1,5 +1,8 @@
 describe('ToH Dashboard', () => {
   it(`has title 'Tour of Heroes'`, () => {
-    cy.visit("http://localhost:4248/dashboard");
+    cy.visit("/dashboard");
+    cy.contains('Tour of Heroes');
+    cy.get('[data-cy="app-title"]').should('contain.text', 'Tour of Heroes');
+    cy.title().should('equal', 'Tour of Heroes');
   })
 });
