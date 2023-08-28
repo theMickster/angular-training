@@ -21,7 +21,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [],
-            "outputPath": "dist/angular-jump-start",
+            "outputPath": "dist/formly-playground",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -84,10 +84,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-jump-start:build:production"
+              "browserTarget": "formly-playground:build:production"
             },
             "development": {
-              "browserTarget": "angular-jump-start:build:development"
+              "browserTarget": "formly-playground:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,7 +95,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-jump-start:build"
+            "browserTarget": "formly-playground:build"
           }
         },
         "test": {
@@ -121,24 +121,24 @@
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "angular-jump-start:serve",
+            "devServerTarget": "formly-playground:serve",
             "watch": true,
             "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-jump-start:serve:production"
+              "devServerTarget": "formly-playground:serve:production"
             }
           }
         },
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "angular-jump-start:serve"
+            "devServerTarget": "formly-playground:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-jump-start:serve:production"
+              "devServerTarget": "formly-playground:serve:production"
             }
           }
         },
@@ -161,14 +161,14 @@
         "ct": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "angular-jump-start:serve",
+            "devServerTarget": "formly-playground:serve",
             "watch": true,
             "headless": false,
             "testingType": "component"
           },
           "configurations": {
             "development": {
-              "devServerTarget": "angular-jump-start:serve:development"
+              "devServerTarget": "formly-playground:serve:development"
             }
           }
         }

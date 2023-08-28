@@ -1,2 +1,2 @@
-# Angular JumpStart
+# Angular Formly Playground
 
