@@ -1,7 +1,7 @@
 # Mick's Angular Training
 
 This GitHub repository contains code samples that demonstrate my self-paced learning of Angular. 
-Most of the work is derrived from Angular coures in Pluralsight &amp; Udemy.
+Most of the work is derived from Angular courses in Pluralsight &amp; Udemy.
 
 ## Getting Started
 
@@ -17,8 +17,8 @@ You will need the following tools:
 
 ## Apps / Courses
 
-`playground`
-Sanbox environment for all fun things Angular & modern SPA development. 
+`formly-playground`
+Sandbox environment for working with [Formly](https://formly.dev/).
 
 `ps-angular-crash-course`
 Materials from Joe Eames's course [Angular Crash Course](https://app.pluralsight.com/library/courses/angular-crash-course/table-of-contents).
