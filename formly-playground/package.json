@@ -1,6 +1,6 @@
 {
-  "name": "formly-playground",
-  "version": "0.0.0",
+  "name": "formlyPlaygroundApp",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4279",
@@ -17,7 +17,7 @@
     "@angular/common": "^16.2.1",
     "@angular/compiler": "^16.2.1",
     "@angular/core": "^16.2.1",
-    "@angular/forms": "^16.2.1",
+    "@angular/forms": "^16.2.2",
     "@angular/localize": "^16.2.1",
     "@angular/platform-browser": "^16.2.1",
     "@angular/platform-browser-dynamic": "^16.2.1",
@@ -29,6 +29,8 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@ng-bootstrap/ng-bootstrap": "^15.1.1",
+    "@ngx-formly/bootstrap": "^6.1.8",
+    "@ngx-formly/core": "^6.1.8",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.1",
     "bootswatch": "^5.3.1",
@@ -45,13 +47,13 @@
     "@angular/compiler-cli": "^16.2.1",
     "@cypress/schematic": "^2.5.0",
     "@types/jasmine": "~4.3.5",
+    "cypress": "latest",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.2",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "^5.1.6",
-    "cypress": "latest"
+    "typescript": "^5.1.6"
   }
 }

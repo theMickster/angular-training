@@ -8,13 +8,17 @@
   >
     <fa-icon [icon]="fontAwesomeCompass" size="2x"></fa-icon>
   </button>
+
+  <button id="btnFeedback" type="button" [routerLink]="['/feedback']" class="btn btn-reddit px-3 ms-4">
+    <fa-icon [icon]="fontAwesomeComments" size="1x"></fa-icon>
+  </button>
 </nav>
 
 <!-- Sidebar -->
 <div class="offcanvas offcanvas-start" id="offcanvasNavbar"
       tabindex="-1" data-bs-scroll="true" aria-labelledby="offcanvasTitle">
   <div class="offcanvas-header">
-    <h1 class="offcanvas-title fs-4 text-facebook" id="offcanvasTitle">Demo Features</h1>
+    <h1 class="offcanvas-title fs-4 text-facebook" id="offcanvasTitle">Playground Features</h1>
     <button id="closeOffcanvasNavbar" type="button" class="btn-close text-reset"
       data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>

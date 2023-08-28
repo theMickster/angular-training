@@ -6,18 +6,32 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FeedbackComponent
   ],
   imports: [
+    FormsModule,
     CommonModule,
     CoreRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    FormlyBootstrapModule,
+    FormlyModule.forRoot({
+      validationMessages: [
+        { name: 'required', message: 'This field is required' },
+      ],
+    })
   ],
   exports: [
     NavbarComponent,

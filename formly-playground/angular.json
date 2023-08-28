@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "demo": {
+    "formlyPlaygroundApp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -21,7 +21,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [],
-            "outputPath": "dist/formly-playground",
+            "outputPath": "dist/formlyPlaygroundApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -84,10 +84,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "formly-playground:build:production"
+              "browserTarget": "formlyPlaygroundApp:build:production"
             },
             "development": {
-              "browserTarget": "formly-playground:build:development"
+              "browserTarget": "formlyPlaygroundApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,7 +95,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "formly-playground:build"
+            "browserTarget": "formlyPlaygroundApp:build"
           }
         },
         "test": {
@@ -121,24 +121,24 @@
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "formly-playground:serve",
+            "devServerTarget": "formlyPlaygroundApp:serve",
             "watch": true,
             "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "formly-playground:serve:production"
+              "devServerTarget": "formlyPlaygroundApp:serve:production"
             }
           }
         },
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "formly-playground:serve"
+            "devServerTarget": "formlyPlaygroundApp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "formly-playground:serve:production"
+              "devServerTarget": "formlyPlaygroundApp:serve:production"
             }
           }
         },
@@ -161,14 +161,14 @@
         "ct": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "formly-playground:serve",
+            "devServerTarget": "formlyPlaygroundApp:serve",
             "watch": true,
             "headless": false,
             "testingType": "component"
           },
           "configurations": {
             "development": {
-              "devServerTarget": "formly-playground:serve:development"
+              "devServerTarget": "formlyPlaygroundApp:serve:development"
             }
           }
         }
