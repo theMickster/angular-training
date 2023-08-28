@@ -1,0 +1,27 @@
+<nav class="navbar navbar-light bg-facebook py-2">
+  <button
+    id="openNavBar"
+    type="button"
+    class="btn btn-facebook px-3 ms-4"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasNavbar"
+  >
+    <fa-icon [icon]="fontAwesomeCompass" size="2x"></fa-icon>
+  </button>
+</nav>
+
+<!-- Sidebar -->
+<div class="offcanvas offcanvas-start" id="offcanvasNavbar"
+      tabindex="-1" data-bs-scroll="true" aria-labelledby="offcanvasTitle">
+  <div class="offcanvas-header">
+    <h1 class="offcanvas-title fs-4 text-facebook" id="offcanvasTitle">Demo Features</h1>
+    <button id="closeOffcanvasNavbar" type="button" class="btn-close text-reset"
+      data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <div class="text-primary">
+      Some text as placeholder. In real life you can have the elements you have chosen.
+    </div>
+  </div>
+</div>
