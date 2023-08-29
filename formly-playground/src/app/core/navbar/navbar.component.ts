@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faCompass, faComments } from '@fortawesome/free-solid-svg-icons';
+import { faCompass, faComments, faHouse } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -9,5 +9,6 @@ import { faCompass, faComments } from '@fortawesome/free-solid-svg-icons';
 export class NavbarComponent {
   fontAwesomeCompass = faCompass;
   fontAwesomeComments = faComments;
+  fontAwesomeHouse = faHouse;
 
 }

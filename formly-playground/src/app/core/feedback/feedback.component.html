@@ -1,23 +1,22 @@
 <h1 class="fs-3 text-facebook"> Feedback Demo using Formly Library</h1>
 
 <div class="m-3 p-3 bg-primary bg-opacity-25 border border-primary rounded-end rounded-start">
-  <form>
-    <fieldset>
-      <legend class="fs-5 text-secondary">Please select your form language</legend>
-      <div class="mb-3">
-        <label for="selectListLanguage" class="form-label">Language</label>
-        <select id="selectLanguage" class="form-select" [(ngModel)]="selectedLanguage" [ngModelOptions]="{standalone: true}"
-              (ngModelChange)="onSelectedLanguageChanged($event)">
-          <option *ngFor="let lang of languages" [ngValue]="lang">{{lang.name}}</option>
-        </select>
-      </div>
-    </fieldset>
+  <form [formGroup]="languageForm">
+    <h2 class="fs-5 text-secondary">Please select your form language</h2>
+    <div class="mb-3">
+      <label for="selectListLanguage" class="form-label">Language</label>
+      <select id="selectLanguage" class="form-select" formControlName="language"
+            (ngModelChange)="onSelectedLanguageChanged($event)">
+        <option [ngValue]="null" disabled>Choose your language</option>
+        <option *ngFor="let lang of languages" [value]="lang.id">{{lang.name}}</option>
+      </select>
+    </div>
   </form>
 </div>
 
 <div class="m-3 p-3 bg-info bg-opacity-10 border border-info rounded-end rounded-start">
 
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" [dir] = "languageDirection">
     <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

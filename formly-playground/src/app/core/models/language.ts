@@ -3,4 +3,5 @@ export interface Language {
   name: string;
   isoTwoDigitCode: string;
   isoThreeDigitCode: string;
+  direction: string;
 }

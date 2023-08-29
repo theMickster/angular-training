@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
-import { Observable, of } from 'rxjs';
 import { LanguageService } from '../services/language.service';
 import { Language } from '../models/language';
+import { SportService } from '../services/sport.service';
+import { Sport } from '../models/sport';
 
 @Component({
   selector: 'app-feedback',
@@ -11,126 +12,123 @@ import { Language } from '../models/language';
   styleUrls: ['./feedback.component.scss']
 })
 export class FeedbackComponent  implements OnInit {
-  form = new FormGroup({});
-  model = { email: '', lastName: '', firstName: '' };
-  options: FormlyFormOptions = {};
+  private formLanguageKey = 'selectedFormLanguage';
+  private defaultLanguage: Language = { id: 'CBAD4BAE-5315-4DE8-8013-3DE9EEBA354A', name: 'English', isoTwoDigitCode: 'en', isoThreeDigitCode: 'eng', direction: 'ltr' };
 
   languages: Language[] = [];
-  selectedLanguage: Language;
+  sports: Sport[] = [];
 
-  fields: FormlyFieldConfig[] = [
-    {
-      id: 'txtInputFirstName',
-      name: 'textBoxInputFirstName',
-      key: 'firstName',
-      type: 'input',
-      props: {
-        label: 'First name',
-        placeholder: 'Kindly enter your first name',
-        required: true
-      },
-      validators: {
-        name: {
-           expression: (c: { value: string | any[]; }) => !c.value || c.value.toString().trim().length >= 2,
-           message: (error: any, field: FormlyFieldConfig) =>
-                    'Name should be greater than 2 characters'
-        }
-      }
-    },
-    {
-      id: 'txtInputLastName',
-      name: 'textBoxInputLastName',
-      key: 'lastName',
-      type: 'input',
-      props: {
-        label: 'Last name',
-        placeholder: 'Kindly enter your last name',
-        required: true
-      },
-      validators: {
-        name: {
-           expression: (c: { value: string | any[]; }) => !c.value || c.value.toString().trim().length >= 2,
-           message: (error: any, field: FormlyFieldConfig) =>
-                    'Name should be greater than 2 characters'
-        }
-      }
-    },
-    {
-      id: 'txtInputEmail',
-      name: 'textBoxInputEmail',
-      key: 'email',
-      type: 'input',
-      props: {
-        label: 'Email address',
-        placeholder: 'Enter email',
-        required: true,
-      }
-    },
-    {
-      id: 'selectListFavoriteSport',
-      key: 'sport',
-      type: 'select',
-      templateOptions: {
-        label: 'Sport',
-        options: this.getSports(),
-        valueProp: 'id',
-        labelProp: 'name'
-      }
+  selectedLanguage: Language = this.defaultLanguage;
+  languageForm = this.formBuilder.group({ language: '' });;
+  languageDirection = this.defaultLanguage.direction;
+
+  form = new FormGroup({});
+  model = { email: '', lastName: '', firstName: '', sport: null };
+  options: FormlyFormOptions = {};
+
+  fields: FormlyFieldConfig[] = [];
+
+  constructor(private sportService: SportService,  private languageService: LanguageService, private formBuilder: FormBuilder) {
+    let cachedFormLanguage = localStorage.getItem(this.formLanguageKey);
+    if(!cachedFormLanguage) {
+      this.selectedLanguage = this.defaultLanguage;
+      localStorage.setItem(this.formLanguageKey, JSON.stringify(this.selectedLanguage));
     }
-  ];
-
-  constructor(private languageService: LanguageService) {
-    this.selectedLanguage = { id: 'CBAD4BAE-5315-4DE8-8013-3DE9EEBA354A', name: 'English', isoTwoDigitCode: 'en', isoThreeDigitCode: 'eng' };
+    else{
+      this.selectedLanguage = JSON.parse(cachedFormLanguage);
+    }
   }
 
   ngOnInit(): void {
-    this.languageService.getLanguages().subscribe( x => this.languages = x);
+    this.sportService.getSports().subscribe(x => {this.sports = x;});
+
+    this.languageService.getLanguages().subscribe( x => {
+      this.languages = x;
+      this.languageForm.get('language')!.setValue(this.selectedLanguage.id);
+    });
+
+    this.setFormlyFields();
   }
 
   onSubmit() {
-
     console.log(this.model);
-
   }
 
   onSelectedLanguageChanged(arg: any) {
-   console.log(arg);
+   this.selectedLanguage = this.languages.find( lang => lang.id === arg) ?? this.defaultLanguage;
+   localStorage.setItem(this.formLanguageKey, JSON.stringify(this.selectedLanguage));
+   this.languageDirection = this.selectedLanguage.direction;
   }
 
-  getSports(): Observable<any[]> {
-    const sports = [
+  setFormlyFields() {
+   this.fields = [
       {
-        id: 1,
-        name: 'Baseball'
+        id: 'txtInputFirstName',
+        name: 'textBoxInputFirstName',
+        key: 'firstName',
+        type: 'input',
+        props: {
+          label: 'First name',
+          placeholder: 'Kindly enter your first name',
+          required: true
+        },
+        validators: {
+          name: {
+             expression: (c: { value: string | any[]; }) => !c.value || c.value.toString().trim().length >= 2,
+             message: (error: any, field: FormlyFieldConfig) =>
+                      'Name should be greater than 2 characters'
+          }
+        },
+        hooks: {
+          onInit: (field: FormlyFieldConfig) => {
+            if(field.props){
+              field.props.label = 'First name label updated!';
+            }
+          }
+        }
       },
       {
-        id: 2,
-        name: 'Football'
+        id: 'txtInputLastName',
+        name: 'textBoxInputLastName',
+        key: 'lastName',
+        type: 'input',
+        props: {
+          label: 'Last name',
+          placeholder: 'Kindly enter your last name',
+          required: true
+        },
+        validators: {
+          name: {
+             expression: (c: { value: string | any[]; }) => !c.value || c.value.toString().trim().length >= 2,
+             message: (error: any, field: FormlyFieldConfig) =>
+                      'Name should be greater than 2 characters'
+          }
+        }
       },
       {
-        id: 3,
-        name: 'Hockey'
-      },
-      {
-        id: 4,
-        name: 'Golf'
-      },
-      {
-        id: 5,
-        name: 'Basketball'
-      },
-      {
-        id: 6,
-        name: 'Tennis'
-      },
-      {
-        id: 7,
-        name: 'Pickleball'
-      },
-
-    ]
-
-    return of(sports);
+        id: 'txtInputEmail',
+        name: 'textBoxInputEmail',
+        key: 'email',
+        type: 'input',
+        props: {
+          label: 'Email address',
+          placeholder: 'Enter email',
+          required: true,
+        }
+      }
+      // ,
+      // {
+      //   id: 'selectListFavoriteSport',
+      //   key: 'sport',
+      //   type: 'select',
+      //   templateOptions: {
+      //     label: 'Sport',
+      //     options: this.getSports(),
+      //     valueProp: 'id',
+      //     labelProp: 'name'
+      //   }
+      // }
+    ];
   }
 
 }

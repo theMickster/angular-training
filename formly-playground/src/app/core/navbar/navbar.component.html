@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-facebook py-2">
+<nav class="navbar navbar-light bg-facebook py-1">
   <button
     id="openNavBar"
     type="button"
@@ -6,11 +6,15 @@
     data-bs-toggle="offcanvas"
     data-bs-target="#offcanvasNavbar"
   >
-    <fa-icon [icon]="fontAwesomeCompass" size="2x"></fa-icon>
+    <fa-icon [icon]="fontAwesomeCompass"></fa-icon>
+  </button>
+
+  <button id="btnHome" type="button" [routerLink]="['/']" class="btn btn-facebook px-3 ms-4">
+    <fa-icon [icon]="fontAwesomeHouse"></fa-icon>
   </button>
 
   <button id="btnFeedback" type="button" [routerLink]="['/feedback']" class="btn btn-reddit px-3 ms-4">
-    <fa-icon [icon]="fontAwesomeComments" size="1x"></fa-icon>
+    <fa-icon [icon]="fontAwesomeComments"></fa-icon>
   </button>
 </nav>
 
