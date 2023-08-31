@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
-import { LanguageService } from '../services/language.service';
-import { Language } from '../models/language';
-import { SportService } from '../services/sport.service';
-import { Sport } from '../models/sport';
+import { LanguageService } from '../../services/language.service';
+import { Language } from '../../models/language';
+import { SportService } from '../../services/sport.service';
+import { Sport } from '../../models/sport';
+import { LabelLanguageMapping } from '../../models/labelLanguageMapping';
+import { BehaviorSubject, combineLatest, mergeMap, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-feedback',
@@ -18,12 +20,19 @@ export class FeedbackComponent  implements OnInit {
   languages: Language[] = [];
   sports: Sport[] = [];
 
-  selectedLanguage: Language = this.defaultLanguage;
   languageForm = this.formBuilder.group({ language: '' });;
   languageDirection = this.defaultLanguage.direction;
 
+  private selectedLanguage: Language = this.defaultLanguage;
+  private selectedLanguageSubject = new BehaviorSubject(this.selectedLanguage);
+  public selectedLanguage$ = this.selectedLanguageSubject.asObservable();
+
+  firstNameLabelMap: LabelLanguageMapping = {} as LabelLanguageMapping;
+  lastNameLabelMap: LabelLanguageMapping = {} as LabelLanguageMapping;
+  emailLabelMap: LabelLanguageMapping = {} as LabelLanguageMapping;
+
   form = new FormGroup({});
-  model = { email: '', lastName: '', firstName: '', sport: null };
+  model = {id: 'a620dc05-a600-4113-bc04-dc032c3a78a9', email: '', lastName: '', firstName: '' };
   options: FormlyFormOptions = {};
 
   fields: FormlyFieldConfig[] = [];
@@ -42,12 +51,16 @@ export class FeedbackComponent  implements OnInit {
   ngOnInit(): void {
     this.sportService.getSports().subscribe(x => {this.sports = x;});
 
-    this.languageService.getLanguages().subscribe( x => {
+    const languages$ = this.languageService.getLanguages();
+
+    languages$.subscribe( x => {
       this.languages = x;
       this.languageForm.get('language')!.setValue(this.selectedLanguage.id);
     });
 
     this.setFormlyFields();
+    this.languageDirection = this.selectedLanguage.direction;
+    this.selectedLanguageSubject.next(this.selectedLanguage);
   }
 
   onSubmit() {
@@ -58,10 +71,14 @@ export class FeedbackComponent  implements OnInit {
    this.selectedLanguage = this.languages.find( lang => lang.id === arg) ?? this.defaultLanguage;
    localStorage.setItem(this.formLanguageKey, JSON.stringify(this.selectedLanguage));
    this.languageDirection = this.selectedLanguage.direction;
+   this.selectedLanguageSubject.next(this.selectedLanguage);
   }
 
   setFormlyFields() {
    this.fields = [
+    {
+      key: 'id'
+    },
       {
         id: 'txtInputFirstName',
         name: 'textBoxInputFirstName',
@@ -69,7 +86,6 @@ export class FeedbackComponent  implements OnInit {
         type: 'input',
         props: {
           label: 'First name',
-          placeholder: 'Kindly enter your first name',
           required: true
         },
         validators: {
@@ -82,7 +98,11 @@ export class FeedbackComponent  implements OnInit {
         hooks: {
           onInit: (field: FormlyFieldConfig) => {
             if(field.props){
-              field.props.label = 'First name label updated!';
+              this.selectedLanguage$
+              .pipe(mergeMap(lang => this.languageService.getFirstNameLabel(lang.id)))
+              .subscribe(mapping => {
+                field.props!.label = mapping.labelText
+              });
             }
           }
         }
@@ -94,7 +114,6 @@ export class FeedbackComponent  implements OnInit {
         type: 'input',
         props: {
           label: 'Last name',
-          placeholder: 'Kindly enter your last name',
           required: true
         },
         validators: {
@@ -103,6 +122,17 @@ export class FeedbackComponent  implements OnInit {
              message: (error: any, field: FormlyFieldConfig) =>
                       'Name should be greater than 2 characters'
           }
+        },
+        hooks: {
+          onInit: (field: FormlyFieldConfig) => {
+            if(field.props){
+              this.selectedLanguage$
+              .pipe(mergeMap(lang => this.languageService.getLastNameLabel(lang.id)))
+              .subscribe(mapping => {
+                field.props!.label = mapping.labelText
+              });
+            }
+          }
         }
       },
       {
@@ -110,11 +140,62 @@ export class FeedbackComponent  implements OnInit {
         name: 'textBoxInputEmail',
         key: 'email',
         type: 'input',
+        expressions: {
+          'props.disabled':(field: FormlyFieldConfig) => {
+            return !field.model.firstName
+          }
+        },
         props: {
           label: 'Email address',
-          placeholder: 'Enter email',
           required: true,
+          attributes: {
+            "data-cy": 'emailOverride'
+          }
+        },
+        hooks: {
+          onInit: (field: FormlyFieldConfig) => {
+            if(field.props){
+              this.selectedLanguage$
+              .pipe(mergeMap(lang => this.languageService.getEmailLabel(lang.id)))
+              .subscribe(mapping => {
+                field.props!.label = mapping.labelText
+              });
+            }
+          }
         }
+      },
+      {
+        id: 'rdoServiceEvaluation',
+        name: 'radioServiceEvaluation',
+        key: 'serviceEvaluation',
+        type: 'radio',
+        props: {
+          label: 'How was your service?',
+          required: true,
+          options: [
+            { value: 1, label: 'Poor'},
+            { value: 2, label: 'Fair'},
+            { value: 3, label: 'Good'},
+            { value: 4, label: 'Very Good'},
+            { value: 5, label: 'Excellent'}
+          ]
+        },
+        hooks: {
+          onInit: (field: FormlyFieldConfig) => {
+            if(field.props){
+              this.selectedLanguage$
+              .pipe(
+                mergeMap(lang =>
+                  combineLatest( [this.languageService.getServiceEvaluationLabel(lang.id),
+                                  this.languageService.getServiceEvaluationOptions(lang.id)]))
+              ).subscribe( ([radioLabel, radioOptions]) => {
+                field.props!.label = radioLabel.labelText;
+                field.props!.options = radioOptions;
+              });
+            }
+          }
+        }
+
       }
       // ,
       // {
