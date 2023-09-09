@@ -84,6 +84,7 @@ export class FeedbackComponent  implements OnInit {
         name: 'textBoxInputFirstName',
         key: 'firstName',
         type: 'input',
+        className: 'fs-4',
         props: {
           label: 'First name',
           required: true
@@ -101,7 +102,13 @@ export class FeedbackComponent  implements OnInit {
               this.selectedLanguage$
               .pipe(mergeMap(lang => this.languageService.getFirstNameLabel(lang.id)))
               .subscribe(mapping => {
-                field.props!.label = mapping.labelText
+                field.props!.label = mapping.labelText;
+                if(mapping.languageId == 'CBAD4BAE-5315-4DE8-8013-3DE9EEBA354A'){
+                  field.className = field.className?.trim().length == 0 ? 'text-youtube' : `${field.className} text-youtube`;
+                }
+                else {
+                  field.className = 'fs-4';
+                }
               });
             }
           }
@@ -191,6 +198,13 @@ export class FeedbackComponent  implements OnInit {
               ).subscribe( ([radioLabel, radioOptions]) => {
                 field.props!.label = radioLabel.labelText;
                 field.props!.options = radioOptions;
+
+                if(radioLabel.languageId == '61877FBD-F5AC-4FB4-8B29-3E837720D14F'){
+                  field.className = field.className?.trim().length == 0 ? 'form-check-reverse' : `${field.className} form-check-reverse`;
+                }
+                else {
+                  field.className = field.className?.replace('form-check-reverse', '');
+                }
               });
             }
           }
