@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "CPM:build"
+            "buildTarget": "CPM:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "CPM:build:production"
+              "buildTarget": "CPM:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CPM:build"
+            "buildTarget": "CPM:build"
           }
         },
         "test": {
