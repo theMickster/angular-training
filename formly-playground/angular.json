@@ -84,10 +84,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "formlyPlaygroundApp:build:production"
+              "buildTarget": "formlyPlaygroundApp:build:production"
             },
             "development": {
-              "browserTarget": "formlyPlaygroundApp:build:development"
+              "buildTarget": "formlyPlaygroundApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,7 +95,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "formlyPlaygroundApp:build"
+            "buildTarget": "formlyPlaygroundApp:build"
           }
         },
         "test": {
