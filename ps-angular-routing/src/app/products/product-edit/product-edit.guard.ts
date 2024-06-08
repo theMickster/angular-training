@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanDeactivate } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ProductEditComponent } from './product-edit.component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductEditGuard implements CanDeactivate<ProductEditComponent>  {
+export class ProductEditGuard   {
 
   canDeactivate(component: ProductEditComponent,
                 currentRoute: ActivatedRouteSnapshot,
