@@ -1,27 +1,26 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatLegacyMenuModule as MatMenuModule} from '@angular/material/legacy-menu';
-import {MatLegacyButtonModule as MatButtonModule} from '@angular/material/legacy-button';
+import {MatMenuModule as MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule as MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {MatLegacyCardModule as MatCardModule} from '@angular/material/legacy-card';
+import {MatCardModule as MatCardModule} from '@angular/material/card';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
-import {MatLegacyTabsModule as MatTabsModule} from '@angular/material/legacy-tabs';
+import {MatTabsModule as MatTabsModule} from '@angular/material/tabs';
 import {CourseComponent} from './course/course.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatLegacyDialogModule as MatDialogModule} from '@angular/material/legacy-dialog';
-import {MatLegacyInputModule as MatInputModule} from '@angular/material/legacy-input';
-import {MatLegacyListModule as MatListModule} from '@angular/material/legacy-list';
-import {MatLegacyPaginatorModule as MatPaginatorModule} from '@angular/material/legacy-paginator';
-import {MatLegacyProgressSpinnerModule as MatProgressSpinnerModule} from '@angular/material/legacy-progress-spinner';
-import {MatLegacySelectModule as MatSelectModule} from '@angular/material/legacy-select';
+import {MatDialogModule as MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule as MatInputModule} from '@angular/material/input';
+import {MatListModule as MatListModule} from '@angular/material/list';
+import {MatPaginatorModule as MatPaginatorModule} from '@angular/material/paginator';
+import {MatProgressSpinnerModule as MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSelectModule as MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSortModule} from '@angular/material/sort';
-import {MatLegacyTableModule as MatTableModule} from '@angular/material/legacy-table';
+import {MatTableModule as MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {HttpClientModule} from '@angular/common/http';
 import {CourseDialogComponent} from './course-dialog/course-dialog.component';
@@ -57,6 +56,8 @@ import { MessagesService } from './services/messages.service';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
@@ -71,18 +72,15 @@ import { MessagesService } from './services/messages.service';
     MatSortModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    AppRoutingModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatMomentDateModule,
-    ReactiveFormsModule
+    MatMomentDateModule
   ],
   providers: [
     LoadingService,
     MessagesService
   ],
-  bootstrap: [AppComponent],
-  entryComponents: [CourseDialogComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
