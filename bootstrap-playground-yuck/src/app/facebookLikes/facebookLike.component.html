@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header text-white bg-facebook">
+    {{ pageTitle }}
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-4">Number of Likes</div>
+      <div class="col-sm-8">{{ postLikes.numberOfLikes }}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <button
+          class="btn btn-success m-2"
+          style="width:120px"
+          (click)="onClickLikeButton()"
+        >
+          Like
+        </button>
+        <button
+          class="btn btn-danger m-2"
+          style="width:120px"
+          (click)="onClickDislikeButton()"
+        >
+          Dislike
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<nav class="navbar navbar-light bg-facebook py-2">
+  <button
+    id="openNavBar"
+    type="button"
+    class="btn btn-facebook px-3 ms-4"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasExample"
+  >
+    <i class="fas fa-compass fa-2x"></i>
+  </button>
+</nav>
+
+<!-- Sidebar -->
+<div
+  class="offcanvas offcanvas-start"
+  tabindex="-1"
+  id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Sandbox Features</h5>
+    <button
+      id="closeNavBar"
+      type="button"
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a
+          [routerLink]="['/home']"
+          data-bs-dismiss="offcanvas"
+          class="nav-link fw-bolder link-facebook"
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          id="linkFacebookLikes"
+          class="nav-link fw-bolder link-facebook"
+          [routerLink]="['/facebook']"
+          data-bs-dismiss="offcanvas"
+        >
+          Facebook Likes
+        </a>
+      </li>
+      <li>
+        <a
+          id="linkReactiveTraining"
+          data-bs-dismiss="offcanvas"
+          [routerLink]="['/reactiveTraining']"
+          class="nav-link fw-bolder link-facebook"
+        >
+          Reactive Training
+        </a>
+      </li>
+      <li>
+        <a
+          id="linkBoostrapPlayground"
+          data-bs-dismiss="offcanvas"
+          class="nav-link fw-bolder link-facebook"
+          [routerLink]="['/boostrapPlayground']"
+        >
+          Boostrap Playground
+        </a>
+      </li>
+      <li>
+        <a
+          id="linkMaterialPlayground"
+          data-bs-dismiss="offcanvas"
+          class="nav-link fw-bolder link-facebook"
+          [routerLink]="['/materialPlayground']"
+        >
+          Angular Material Playground
+        </a>
+      </li>
+
+      <li>
+        <a
+          id="linkEditorsAuthors"
+          data-bs-dismiss="offcanvas"
+          class="nav-link fw-bolder link-facebook"
+          [routerLink]="['/editors/authors']"
+        >
+          Authors
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
