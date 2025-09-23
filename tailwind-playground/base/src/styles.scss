@@ -1,1 +1,146 @@
+/*
 @use 'tailwindcss';
+
+:root {
+  --header-bg: #ffffff;
+  --header-text: #111827;
+  --header-border: #e5e7eb;
+  --nav-text: #374151;
+  --nav-hover: #2563eb;
+  --sidebar-bg: #f9fafb;
+  --sidebar-border: #e5e7eb;
+  --footer-bg: #f3f4f6;
+  --footer-text: #6b7280;
+}
+
+[data-theme="dark"] {
+  --header-bg: #111827;
+  --header-text: #ffffff;
+  --header-border: #374151;
+  --nav-text: #d1d5db;
+  --nav-hover: #60a5fa;
+  --sidebar-bg: #1f2937;
+  --sidebar-border: #374151;
+  --footer-bg: #111827;
+  --footer-text: #9ca3af;
+}
+
+.themed-header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  border-bottom: 1px solid var(--header-border);
+}
+
+.themed-nav-item {
+  color: var(--nav-text);
+  transition: color 0.2s ease;
+}
+
+.themed-nav-item:hover {
+  color: var(--nav-hover);
+}
+
+.themed-sidebar {
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+}
+
+.themed-footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+}
+*/
+@use 'tailwindcss';
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Tech/Developer Light theme (GitHub-inspired) */
+:root {
+  --header-bg: #0d1117;
+  --header-text: #f0f6fc;
+  --header-border: #30363d;
+  --nav-text: #8b949e;
+  --nav-hover: #58a6ff;
+  --nav-active: #238636;
+  --sidebar-bg: #161b22;
+  --sidebar-border: #30363d;
+  --footer-bg: #0d1117;
+  --footer-text: #7d8590;
+  --code-bg: #161b22;
+  --code-border: #30363d;
+  --main-bg: #f1f5f9;
+  --main-text: #24292f;
+}
+
+/* Tech/Developer Light mode (still dark-ish for dev feel) */
+[data-theme='light'] {
+  --header-bg: #24292f;
+  --header-text: #f0f6fc;
+  --header-border: #d0d7de;
+  --nav-text: #656d76;
+  --nav-hover: #0969da;
+  --nav-active: #1a7f37;
+  --sidebar-bg: #f6f8fa;
+  --sidebar-border: #d0d7de;
+  --footer-bg: #f6f8fa;
+  --footer-text: #656d76;
+  --code-bg: #f6f8fa;
+  --code-border: #d0d7de;
+  --main-bg: #f6f8fa;
+  --main-text: #24292f;
+}
+
+/* Apply tech theme variables */
+.tech-header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  border-bottom: 1px solid var(--header-border);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.tech-nav-item {
+  color: var(--nav-text);
+  transition: color 0.15s ease;
+  font-weight: 500;
+}
+
+.tech-nav-item:hover {
+  color: var(--nav-hover);
+}
+
+.tech-nav-item.active {
+  color: var(--nav-active);
+}
+
+.tech-sidebar {
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+}
+
+.tech-footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  font-size: 0.875rem;
+}
+
+.tech-code-block {
+  background-color: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 0.375rem;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.tech-main {
+  background-color: var(--main-bg);
+  color: var(--main-text);
+}

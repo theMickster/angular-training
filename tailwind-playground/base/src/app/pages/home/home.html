@@ -1,1 +1,89 @@
-<h1 class="text-5xl font-bold text-blue-600">Welcome Home</h1>
+<div class="tech-main min-h-full flex items-center justify-center py-12 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+
+    <!-- Hero Section -->
+    <div class="mb-12">
+      <!-- Animated Welcome Badge -->
+      <div
+        class="inline-block mb-6 px-4 py-2 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-full text-sm font-semibold animate-bounce shadow-lg">
+        🚀 Welcome to the Future of Apps!
+      </div>
+
+      <!-- Main Title with Gradient -->
+      <h1
+        class="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-blue-500 to-green-400 bg-clip-text text-transparent">
+        Welcome Home,<br>
+        <span class="text-5xl md:text-6xl">Developer! 👨‍💻</span>
+      </h1>
+
+      <!-- Subtitle with Personality -->
+      <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+        You've just entered the <strong>most awesome</strong> Angular 20 + Tailwind CSS 4 + Jest playground ever
+        created!
+        <span class="inline-block ml-2">✨</span>
+      </p>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <!-- Angular 20 Card -->
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:scale-105">
+        <div class="text-4xl mb-4">🅰️</div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Angular 20</h3>
+        <p class="text-gray-600">Cutting-edge framework with signals, standalone components, and all the latest goodies!
+        </p>
+      </div>
+
+      <!-- Tailwind Card -->
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:scale-105">
+        <div class="text-4xl mb-4">🎨</div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Tailwind CSS 4</h3>
+        <p class="text-gray-600">Beautiful, responsive design with utility-first CSS that makes styling a breeze!</p>
+      </div>
+
+      <!-- Jest Card -->
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:scale-105">
+        <div class="text-4xl mb-4">🧪</div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Jest Testing</h3>
+        <p class="text-gray-600">Rock-solid testing setup that gives you confidence in every line of code you write!</p>
+      </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-8 text-white mb-12">
+      <h2 class="text-3xl font-bold mb-4">Ready to Build Something Amazing? 🚀</h2>
+      <p class="text-lg mb-6 opacity-90">Your development environment is locked and loaded. Time to create magic!</p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
+          🎯 Start Coding
+        </button>
+        <button
+          class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition-all">
+          📚 View Docs
+        </button>
+      </div>
+    </div>
+
+    <!-- Fun Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div class="bg-white rounded-lg p-4 shadow-md">
+        <div class="text-2xl font-bold text-green-500">{{ coffeeCount() }}</div>
+        <div class="text-sm text-gray-600">Cups of Coffee ☕</div>
+      </div>
+      <div class="bg-white rounded-lg p-4 shadow-md">
+        <div class="text-2xl font-bold text-blue-500">{{ linesOfCode() }}</div>
+        <div class="text-sm text-gray-600">Lines of Code 💻</div>
+      </div>
+      <div class="bg-white rounded-lg p-4 shadow-md">
+        <div class="text-2xl font-bold text-purple-500">{{ bugsSquashed() }}</div>
+        <div class="text-sm text-gray-600">Bugs Squashed 🐛</div>
+      </div>
+      <div class="bg-white rounded-lg p-4 shadow-md">
+        <div class="text-2xl font-bold text-yellow-500">{{ happinesLevel() }}%</div>
+        <div class="text-sm text-gray-600">Developer Joy 😊</div>
+      </div>
+    </div>
+  </div>
+</div>

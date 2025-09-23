@@ -18,4 +18,10 @@ describe('Home Component', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render a single h1 element', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const h1Elements = compiled.querySelectorAll('h1');
+    expect(h1Elements.length).toBe(1);
+  });
 });

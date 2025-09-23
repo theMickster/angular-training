@@ -1,1 +1,34 @@
-<p class="text-md text-gray-600">app-header works!</p>
+<header class="tech-header px-4 py-3 flex items-center justify-between">
+  <!-- Left side: Waffle menu + App name -->
+  <div class="flex items-center space-x-4">
+    <!-- Waffle menu button -->
+    <button class="tech-nav-item hover:opacity-80 p-2 rounded-md transition-all">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+      </svg>
+    </button>
+
+    <!-- App name -->
+    <h1 class="text-xl font-semibold font-mono" style="color: var(--header-text);">
+      Our Base Tailwind App
+    </h1>
+  </div>
+
+  <!-- Right side: User profile -->
+  <div class="flex items-center space-x-3">
+    <!-- User name (optional) -->
+    <span class="tech-nav-item hidden md:block text-sm">
+      John Developer
+    </span>
+
+    <!-- Profile avatar/icon -->
+    <button class="tech-nav-item hover:opacity-80 p-1 rounded-full transition-all">
+      <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1.5V6H9V1.5L3 7V9H1V11H23V9M6 12C6 10.89 6.89 10 8 10S10 10.89 10 12V22H8V12M14 12C14 10.89 14.89 10 16 10S18 10.89 18 12V22H16V12" />
+        </svg>
+      </div>
+    </button>
+  </div>
+</header>

@@ -1,7 +1,7 @@
-<div class="flex flex-col min-h-screen">
-  <app-header></app-header>
-  <main class="flex-1">
+<div class="flex flex-col h-screen max-h-screen">
+  <app-header class="flex-shrink-0"></app-header>
+  <main class="flex-1 overflow-auto min-h-0 tech-main">
     <router-outlet></router-outlet>
   </main>
-  <app-footer></app-footer>
+  <app-footer class="flex-shrink-0"></app-footer>
 </div>
